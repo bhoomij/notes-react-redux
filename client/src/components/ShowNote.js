@@ -20,6 +20,11 @@ class ShowNote extends Component {
         this.onSubmit = this.onSubmit.bind(this)
     }
 
+    onDelete(e) {
+        this.props.deleteNote(this.state.id);
+        this.props.history.push("/");
+    }
+
     componentWillReceiveProps(nextProps, nextState) {
         if (this.state.id !== nextProps.match.params.id) {
             this.props.getNote(nextProps.match.params.id)
@@ -67,7 +72,7 @@ class ShowNote extends Component {
     render() {
         const { title, body, errors } = this.state;
         return (
-            <form onSubmit={this.onSubmit}>
+            <form>
                 <InputField
                     placeholder="Enter title"
                     name="title"
@@ -83,9 +88,18 @@ class ShowNote extends Component {
                     error={errors.body}
                 />
                 <div className="text-center">
-                    <button type="submit" className="btn btn-primary">Save</button>
+                    <div className="btn-group">
+                        <div className="mr-1">
+                            <button type="submit"
+                                onClick={this.onSubmit}
+                                className="btn btn-primary">Save</button>
+                        </div>
+                        <div className="ml-1" onClick={this.onDelete.bind(this)}>
+                            <button type="button" className="btn btn-primary">Delete</button>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </form >
         );
     }
 }

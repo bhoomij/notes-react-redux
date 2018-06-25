@@ -11,14 +11,12 @@ class NotesList extends Component {
     }
 
     render() {
-
         if (!this.props.notes) {
             return <div>Loading...</div>
         }
         const noteList = this.props.notes.map(note => {
             return < NoteListItem note={note} key={note.id} />
         });
-
         return (
             <div className="col-md-3" style={{ maxHeight: '500px', overflowY: 'scroll' }} >
                 <div className="list-group">

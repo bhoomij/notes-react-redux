@@ -40,6 +40,7 @@ class App extends Component {
                       <i className="fa fa-plus"></i> Add Note</Link>
                   </div>
                   <Switch>
+                    <Route path="/delete-note" component={selectItem} />
                     <Route path="/add-note" component={AddNote} />
                     <Route path="/:id" component={ShowNote} />
                     <Route path="/" component={selectItem} />

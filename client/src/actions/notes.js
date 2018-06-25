@@ -52,9 +52,9 @@ export const updateNote = (note) => {
     };
 }
 
-export const deleteNote = (note) => {
+export const deleteNote = (id) => {
     if (window.confirm('This CANT be undone, Sure you want to remove this note ?')) {
-        var index = notes.findIndex(item => item.id === note.id);
+        var index = notes.findIndex(item => item.id === id);
         notes.splice(index, 1);
     }
     return {

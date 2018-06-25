@@ -54,8 +54,6 @@ class ShowNote extends Component {
             this.setState({ errors })
         }
 
-
-        console.log(Object.keys(errors).length);
         if (!Object.keys(errors).length) {
             const newNote = {
                 id: this.state.id,
@@ -68,7 +66,6 @@ class ShowNote extends Component {
 
     render() {
         const { title, body, errors } = this.state;
-        console.log('1', errors.title);
         return (
             <form onSubmit={this.onSubmit}>
                 <InputField

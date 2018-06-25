@@ -35,7 +35,6 @@ export const getNote = (id) => {
 
 export const addNote = (note) => {
     note.id = new Date().getUTCMilliseconds();
-    console.log('add', note)
     notes.unshift(note);
     return {
         type: 'GET_NOTES',

@@ -6,6 +6,6 @@ body {
   font-family: 'Markazi Text', serif;
 }
 
-* {
-  font-size: 18px;
+body, div {
+  font-size: 24px;
 }
